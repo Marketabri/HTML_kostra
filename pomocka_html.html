@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML ťahák</title>
+<style>
+  :root { --main: #2b6cb0; --light: #eef4fb; --text: #1f2933; --code: #f3f3f8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; font-size: 18px; line-height: 1.45; color: var(--text); background: #fff; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+  header { border-bottom: 4px solid var(--main); margin-bottom: 18px; padding-bottom: 8px; }
+  h1 { margin: 0; font-size: 34px; color: var(--main); }
+  header p { margin: 4px 0 0; color: #555; }
+  h2 { font-size: 22px; color: var(--main); margin: 0 0 8px; }
+  section { background: var(--light); border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; break-inside: avoid; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid section { margin-bottom: 0; }
+  table { border-collapse: collapse; width: 100%; background: #fff; border-radius: 6px; overflow: hidden; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #dde3ec; vertical-align: top; }
+  th { background: var(--main); color: #fff; font-weight: 600; font-size: 16px; }
+  td:first-child { white-space: nowrap; }
+  code { font-family: Consolas, "Courier New", monospace; background: var(--code); padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
+  pre { font-family: Consolas, "Courier New", monospace; background: #1f2933; color: #e6edf3; padding: 12px 16px; border-radius: 8px; font-size: 15px; line-height: 1.4; margin: 6px 0 0; overflow-x: auto; }
+  .tag { color: #7ee787; } .attr { color: #79c0ff; } .val { color: #ffa657; } .com { color: #8b949e; }
+  .note { font-size: 16px; margin: 8px 0 0; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .wrap { padding: 16px; } }
+  @media print { body { font-size: 12px; } h1 { font-size: 22px; } h2 { font-size: 15px; } pre { font-size: 10.5px; } th { font-size: 11px; } .grid { gap: 10px; } section { padding: 8px 12px; margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>HTML ťahák</h1>
+  <p>Tagy sa nemusíš učiť naspamäť. Keď niečo potrebuješ, nájdeš to tu.</p>
+</header>
+
+<section>
+  <h2>Kostra stránky</h2>
+<pre><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="val">"sk"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">&gt;</span>                        <span class="com">&lt;!-- správne zobrazenie diakritiky --&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Názov v karte prehliadača<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"stylesheet"</span> <span class="attr">href</span>=<span class="val">"style.css"</span><span class="tag">&gt;</span>   <span class="com">&lt;!-- prepojenie s CSS --&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="com">&lt;!-- sem patrí všetko, čo sa zobrazí na stránke --&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+  <p class="note">V <code>head</code> sú nastavenia stránky, ktoré sa nezobrazujú. V <code>body</code> je obsah, ktorý vidíš.</p>
+</section>
+
+<div class="grid">
+  <section>
+    <h2>Nadpisy a text</h2>
+    <table>
+      <tr><th>Tag</th><th>Čo robí</th></tr>
+      <tr><td><code>&lt;h1&gt;…&lt;/h1&gt;</code></td><td>hlavný nadpis (na stránke iba raz)</td></tr>
+      <tr><td><code>&lt;h2&gt;</code> … <code>&lt;h6&gt;</code></td><td>menšie podnadpisy</td></tr>
+      <tr><td><code>&lt;p&gt;…&lt;/p&gt;</code></td><td>odsek textu</td></tr>
+      <tr><td><code>&lt;br&gt;</code></td><td>nový riadok (nemá koncový tag)</td></tr>
+      <tr><td><code>&lt;hr&gt;</code></td><td>vodorovná čiara</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Úprava písma</h2>
+    <table>
+      <tr><th>Tag</th><th>Výsledok</th></tr>
+      <tr><td><code>&lt;b&gt;…&lt;/b&gt;</code></td><td><b>tučné písmo</b></td></tr>
+      <tr><td><code>&lt;i&gt;…&lt;/i&gt;</code></td><td><i>šikmé písmo</i></td></tr>
+      <tr><td><code>&lt;u&gt;…&lt;/u&gt;</code></td><td><u>podčiarknuté</u></td></tr>
+      <tr><td><code>&lt;mark&gt;…&lt;/mark&gt;</code></td><td><mark>zvýraznený text</mark></td></tr>
+      <tr><td><code>&lt;small&gt;…&lt;/small&gt;</code></td><td><small>menšie písmo</small></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Zarovnanie textu</h2>
+<pre><span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="val">"text-align: center;"</span><span class="tag">&gt;</span>na stred<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="val">"text-align: left;"</span><span class="tag">&gt;</span>vľavo<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="val">"text-align: right;"</span><span class="tag">&gt;</span>vpravo<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="val">"text-align: justify;"</span><span class="tag">&gt;</span>do bloku<span class="tag">&lt;/p&gt;</span></pre>
+    <p class="note">Rovnako funguje aj pri nadpisoch: <code>&lt;h1 style="text-align: center;"&gt;</code></p>
+  </section>
+
+  <section>
+    <h2>Zoznamy</h2>
+<pre><span class="com">&lt;!-- odrážkový --&gt;</span>        <span class="com">&lt;!-- číslovaný --&gt;</span>
+<span class="tag">&lt;ul&gt;</span>                    <span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>prvý<span class="tag">&lt;/li&gt;</span>         <span class="tag">&lt;li&gt;</span>prvý<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>druhý<span class="tag">&lt;/li&gt;</span>        <span class="tag">&lt;li&gt;</span>druhý<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>                   <span class="tag">&lt;/ol&gt;</span></pre>
+    <p class="note"><code>ul</code> = odrážky, <code>ol</code> = čísla, <code>li</code> = jedna položka</p>
+  </section>
+
+  <section>
+    <h2>Odkazy</h2>
+<pre><span class="com">&lt;!-- stránka v tom istom priečinku --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"kontakt.html"</span><span class="tag">&gt;</span>Kontakt<span class="tag">&lt;/a&gt;</span>
+
+<span class="com">&lt;!-- iná webstránka, otvorí sa v novej karte --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://www.ssnizna.sk"</span> <span class="attr">target</span>=<span class="val">"_blank"</span><span class="tag">&gt;</span>Škola<span class="tag">&lt;/a&gt;</span></pre>
+    <p class="note">Text medzi <code>&lt;a&gt;</code> a <code>&lt;/a&gt;</code> je to, na čo sa klikne.</p>
+  </section>
+
+  <section>
+    <h2>Obrázky</h2>
+<pre><span class="com">&lt;!-- obrázok z priečinka obrazky --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"obrazky/img1.jpg"</span> <span class="attr">alt</span>=<span class="val">"Popis"</span><span class="tag">&gt;</span>
+
+<span class="com">&lt;!-- šírka 300 px a zarovnanie na stred --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"obrazky/img1.jpg"</span> <span class="attr">alt</span>=<span class="val">"Popis"</span>
+     <span class="attr">style</span>=<span class="val">"width: 300px; display: block; margin: 0 auto;"</span><span class="tag">&gt;</span></pre>
+    <p class="note"><code>src</code> = cesta k obrázku, <code>alt</code> = text, ktorý sa zobrazí, keď sa obrázok nenačíta</p>
+  </section>
+</div>
+
+<section style="margin-top:16px">
+  <h2>Dôležité pravidlá</h2>
+  <table>
+    <tr><td>Párové tagy</td><td>Väčšina tagov sa otvára a zatvára: <code>&lt;p&gt;</code> … <code>&lt;/p&gt;</code>. Zatvárací tag má lomku.</td></tr>
+    <tr><td>Nepárové tagy</td><td><code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;meta&gt;</code> a <code>&lt;link&gt;</code> sa nezatvárajú.</td></tr>
+    <tr><td>Vnáranie</td><td>Čo otvoríš ako posledné, zatvor ako prvé: <code>&lt;p&gt;&lt;b&gt;text&lt;/b&gt;&lt;/p&gt;</code></td></tr>
+    <tr><td>Komentár</td><td><code>&lt;!-- poznámka --&gt;</code> sa na stránke nezobrazí.</td></tr>
+    <tr><td>Názvy súborov</td><td>Píš bez diakritiky, medzier a veľkých písmen. <code>img1.jpg</code> ≠ <code>IMG1.JPG</code></td></tr>
+  </table>
+</section>
+
+</div>
+</body>
+</html>
